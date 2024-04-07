@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+  }
+  body {
+      overflow: hidden;
+  }
+  section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(to bottom, #eaeaee, #d4d8db);
+      position: relative;
+  }
+  .color {
+      position: absolute;
+      filter: blur(150px);
+  }
+  .color:nth-child(1) {
+    top: -350px;
+    width: 600px;
+    height: 600px;
+    background: #ff7f50; /* Coral */
+  }
+  .color:nth-child(2) {
+    bottom: -150px;
+    left: 100px;
+    width: 500px;
+    height: 500px;
+    background: #6a5acd; /* Slate Blue */
+  }
+  .color:nth-child(3) {
+    bottom: 50px;
+    right: 100px;
+    width: 300px;
+    height: 300px;
+    background: #ffd700; /* Gold */
+  }
+  .container {
+      position: relative;
+      width: 400px;
+      min-height: 400px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 25px 45px rgba(142, 141, 141, 0.566);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .form {
+      width: 100%;
+      padding: 40px;
+  }
+  .form h2 {
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      position: relative;
+  }
+  .form h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 80px;
+      height: 4px;
+      background: #ffffff;
+  }
+  .inputBox {
+      margin-top: 20px;
+  }
+  .inputBox input {
+      width: 100%;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      outline: none;
+      padding: 10px 20px;
+      border-radius: 35px;
+      border: 1px solid rgba(255,255,255,0.5);
+      border-right: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      font-size: 16px;
+      letter-spacing: 1px;
+      color: #ffffff;
+      box-shadow: 0 5px 15px rgba(184, 182, 182, 0.5);
+  }
+  .inputBox input::placeholder {
+      color: #ffffff;
+  }
+  .inputBox input[type="submit"] {
+      background: rgba(255,255,255,0.2);
+      color: #ffffff;
+      max-width: 100px;
+      cursor: pointer;
+      margin-top: 20px;
+      font-weight: 600;
+  }
+  .forget {
+      margin-top: 20px;
+      color: #ffffff;
+  }
+  .forget a {
+      color: #ffffff;
+      font-weight: 600;
+      margin-left: 5px;
+  }
+  .shapes {
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      
+  }
+      
+  .shape {
+      width: 100px;
+      height: 100px;
+      background-color: #fff;
+      position: absolute;
+      animation-duration: 2s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      transition: transform 0.3s ease-in-out;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+      border: 1px solid rgba(255,255,255,0.5);
+      border-right: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      border-top: 1px solid rgba(255,255,255,0.2);
+  }
+  .shape1 {
+        top: 30px;
+        right: 170px;
+        width: 100px;
+        height: 100px;
+  }
+      
+     
+  .shape1 {
+      animation-name: upDown;
+  }
+      
+    @keyframes upDown {
+      0%, 100% {
+      transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+  .shape2 {
+        top: 0px;
+        left: 150px;
+        width: 120px;
+        height: 120px;
+        z-index: 2;
+
+  }
+    .shape2 {
+      animation-name: upDown;
+    }
+      
+    @keyframes upDown {
+      0%, 100% {
+      transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+    .shape3 {
+        top: 430px;
+        left: 150px;
+        width: 80px;
+        height: 80px;
+        z-index: -1;
+    }
+    .shape3 {
+      animation-name: upDown;
+    }
+      
+    @keyframes upDown {
+      0%, 100% {
+      transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+   
+    .shape4 {
+        top: 255px;
+        left: 220px;
+        width: 60px;
+        height: 60px;
+    }
+    .shape4 {
+      animation-name: upDown;
+    }
+      
+    @keyframes upDown {
+      0%, 100% {
+      transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+   
+    
+  </style>
+</head>
+<body>
+  <section>
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="container">
+      <div class="form">
+        <h2>Login Form</h2>
+        <form>
+          <div class="inputBox">
+            <input type="text" placeholder="Username">
+          </div>
+          <div class="inputBox">
+            <input type="password" placeholder="Password">
+          </div>
+          <div class="inputBox">
+            <input type="submit" value="Login">
+          </div>
+        </form>
+        <p class="forget">Forgot your password? <a href="#">Click here</a></p>
+        <p class="forget">Don't have an account? <a href="#">Sign Up</a></p>
+      </div>
+    </div>
+    <div class="shapes">
+      <div class="shape shape1"></div>
+      <div class="shape shape2"></div>
+      <div class="shape shape3"></div>
+      <div class="shape shape4"></div>
+    </div>
+  </section>
+</body>
+</html>
